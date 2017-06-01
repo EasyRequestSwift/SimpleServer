@@ -2,19 +2,18 @@
 module.exports = (app) => {
 
 	app.get('/api/success', function(request, response) {
-		let json = {
+		const json = {
 			success: true,
-			message: 'Success in this route'
+			message: 'Success in this route.'
 		}
 		response.status(200).json(json);
 	});
 
 	app.get('/api/internal-error', function(request, response) {
-		let json = {
+		const json = {
 			success: false,
-			message: 'Error internal'
+			error: 'Internal server error.'
 		}
 		response.status(500).json(json);
 	});
-
 }
